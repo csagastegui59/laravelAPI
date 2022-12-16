@@ -1,22 +1,22 @@
 # Clone the project  
 ~~~
-- $ git clone git@gitlab.com:christianesr/final-project.git  
+$ git clone git@gitlab.com:christianesr/final-project.git  
 ~~~
 ## Install dependencies  
 ~~~
-- $ composer install
+$ composer install
 ~~~
 
-## Start the server  
-~~~
-- $ php artisan serve
-~~~
 # Run migrations
 ~~~
-- $ php artisan migrate
+$ php artisan migrate
+~~~
+## Start the server  
+~~~
+$ php artisan serve
 ~~~
 
 # show relations between models
 ~~~
-- $ php artisan model:show Api/Candidate
+$ php artisan model:show Api/Candidate
 ~~~

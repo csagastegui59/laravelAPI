@@ -7,6 +7,8 @@ $ git clone git@gitlab.com:christianesr/final-project.git
 $ composer install
 ~~~
 
+## Configure env file using your own credentials, you can find an example of the credentials needed on the .env.example file
+
 # Run migrations
 ~~~
 $ php artisan migrate

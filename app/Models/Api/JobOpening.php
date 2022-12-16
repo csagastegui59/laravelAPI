@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class JobOpening extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    
+    protected $guarded = [
+        'id'
+    ];
 
     public function company()
     {
@@ -15,6 +20,11 @@ class JobOpening extends Model
     }
 
     public function candidates()
+    {
+        return $this->hasMany(Candidate::class);
+    }
+
+    public function applicants()
     {
         return $this->hasMany(Candidate::class);
     }

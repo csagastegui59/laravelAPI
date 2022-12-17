@@ -109,53 +109,53 @@ class ApplicantTest extends TestCase
         ->assertJsonPath('applicants.0.id', $applicant->id);
     }
 
-    // public function test_it_should_allow_unauthenticated_users_to_register_as_applicants()
-    // {
-    //     $company = Company::factory()->create();
+    public function test_it_should_allow_unauthenticated_users_to_register_as_applicants()
+    {
+        $company = Company::factory()->create();
 
-    //     $jobOpening = JobOpening::factory()->create([
-    //         'company_id' => $company->id
-    //     ]);
+        $jobOpening = JobOpening::factory()->create([
+            'company_id' => $company->id
+        ]);
 
-    //     $response = $this->post(
-    //         '/api/companies/'.$company->id.'/jobOpenings'.'/'.$jobOpening->id.'/applicants',
-    //         [
-    //             'first_name' => 'Christian',
-    //             'last_name' => 'Sagastegui',
-    //             'email' => 'mail@mail.com'
-    //         ]
-    //     );
+        $response = $this->post(
+            '/api/companies/'.$company->id.'/jobOpenings'.'/'.$jobOpening->id.'/applicants',
+            [
+                'first_name' => 'Christian',
+                'last_name' => 'Sagastegui',
+                'email' => 'mail@mail.com'
+            ]
+        );
 
-    //     $response->assertStatus(201)
-    //     ->assertJsonPath('applicant.id', $response['applicant']['id']);
-    // }
+        $response->assertStatus(201)
+        ->assertJsonPath('applicant.id', $response['applicant']['id']);
+    }
 
-    // public function test_it_should_allow_authenticated_users_to_register_as_applicants()
-    // {
-    //     $user = Sanctum::actingAs(
-    //         User::factory()->create([
-    //             'role' => 'recruiter'
-    //         ]), ['company:recruiter']
-    //     );
+    public function test_it_should_allow_authenticated_users_to_register_as_applicants()
+    {
+        $user = Sanctum::actingAs(
+            User::factory()->create([
+                'role' => 'recruiter'
+            ]), ['company:recruiter']
+        );
 
-    //     $company = Company::factory()->create();
+        $company = Company::factory()->create();
 
-    //     $jobOpening = JobOpening::factory()->create([
-    //         'company_id' => $company->id
-    //     ]);
+        $jobOpening = JobOpening::factory()->create([
+            'company_id' => $company->id
+        ]);
 
-    //     $response = $this->post(
-    //         '/api/companies/'.$company->id.'/jobOpenings'.'/'.$jobOpening->id.'/applicants',
-    //         [
-    //             'first_name' => 'Christian',
-    //             'last_name' => 'Sagastegui',
-    //             'email' => 'mail1@mail.com'
-    //         ]
-    //     );
+        $response = $this->post(
+            '/api/companies/'.$company->id.'/jobOpenings'.'/'.$jobOpening->id.'/applicants',
+            [
+                'first_name' => 'Christian',
+                'last_name' => 'Sagastegui',
+                'email' => 'mail1@mail.com'
+            ]
+        );
 
-    //     $response->assertStatus(201)
-    //     ->assertJsonPath('applicant.id', $response['applicant']['id']);
-    // }
+        $response->assertStatus(201)
+        ->assertJsonPath('applicant.id', $response['applicant']['id']);
+    }
 
     public function test_it_should_throw_an_error_to_unauthenticated_users_to_display_one_applicant_to_a_job_opening()
     {

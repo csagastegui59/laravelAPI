@@ -40,7 +40,7 @@ class UserController extends Controller implements CreateUserInterface
             }
     }
 
-    public function store(Company $company,CreateUserRequest $request)
+    public function store(Company $company, CreateUserRequest $request)
     {
         try {
             $validated = $request->validated();

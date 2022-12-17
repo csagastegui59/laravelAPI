@@ -19,15 +19,15 @@ Route::resource('companies.jobOpenings.applicants', ApplicantController::class)
 Route::middleware(['auth:sanctum'])->group(function() {
     Route::resource('companies.jobOpenings.applicants', ApplicantController::class)
         ->only('index', 'show', 'destroy')
-        ->middleware('ability:api:admin, company:admin, company:recruiter');
+        ->middleware('ability:api:admin,company:admin,company:recruiter');
 
     Route::resource('companies.jobOpenings.candidates', CandidateController::class)
         ->only('index', 'store', 'show', 'update', 'destroy')
-        ->middleware('ability:api:admin, company:admin, company:recruiter');
+        ->middleware('ability:api:admin,company:admin,company:recruiter');
 
     Route::resource('companies', CompanyController::class)
         ->only('show', 'index')
-        ->middleware('ability:company:recruiter, api:admin, company:admin');
+        ->middleware('ability:company:recruiter,api:admin,company:admin');
 
     Route::resource('companies', CompanyController::class)
         ->only('store', 'destroy')
@@ -35,18 +35,18 @@ Route::middleware(['auth:sanctum'])->group(function() {
 
     Route::resource('companies', CompanyController::class)
         ->only('update')
-        ->middleware('ability:api:admin, company:admin');
+        ->middleware('ability:api:admin,company:admin');
 
     Route::resource('companies.jobOpenings', JobOpeningController::class)
         ->only('index', 'store', 'show', 'update', 'destroy')
-        ->middleware('ability:api:admin, company:admin, company:recruiter');
+        ->middleware('ability:api:admin,company:admin,company:recruiter');
 
     Route::resource('companies.users', UserController::class)
         ->only('index', 'store', 'show', 'update', 'destroy')
-        ->middleware('ability:api:admin, company:admin, company:recruiter');
+        ->middleware('ability:api:admin,company:admin,company:recruiter');
     
     Route::get('companies/{company}/jobOpenings/{jobOpening}/reports',[JobOpeningController::class, 'reports'])
-        ->middleware('ability:api:admin, company:admin, company:recruiter');
+        ->middleware('ability:api:admin,company:admin,company:recruiter');
 
     Route::post('logout', [AuthController::class, 'logout']);
 });

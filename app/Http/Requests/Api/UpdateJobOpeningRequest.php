@@ -10,7 +10,7 @@ class UpdateJobOpeningRequest extends ApiFormRequest
     {
         $user = $this->user();
 
-        return $user != null && $user->role  ? true : false;
+        return $user != null && $user->role ? true : false;
     }
 
     public function rules()

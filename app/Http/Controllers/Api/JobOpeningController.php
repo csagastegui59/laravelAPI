@@ -46,7 +46,6 @@ class JobOpeningController extends Controller
 
             $jobOpening = JobOpening::create([
                 'company_id' => $company->id,
-                'name' => $validated['name'],
                 'title' => $validated['title'],
                 'description' => $validated['description'],
                 'is_published' => $validated['is_published']

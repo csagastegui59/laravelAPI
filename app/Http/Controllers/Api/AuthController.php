@@ -2,43 +2,46 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Api\{ User, Candidate };
+use App\Models\Api\{ User, Candidate, Company };
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\{ Auth, Hash };
-use App\Http\Requests\Api\{ CreateUserRequest, LogUserRequest };
+use App\Http\Requests\Api\{ CreateUserRequest, LogUserRequest, CreateApiAdminRequest };
 
 class AuthController extends Controller
 {
-  public function store(CreateUserRequest $request)
+  public function store(CreateApiAdminRequest $request)
   {
     try {
-      $validated = $request->validated();
+        $validated = $request->validated();
+        $company = '';
 
-      $user = User::create([
-        'company_id' => $validated['company_id'],
-        'first_name' => $validated['first_name'],
-        'last_name' => $validated['last_name'],
-        'email' => $validated['email'],
-        'role' => $validated['role'],
-        'password' => Hash::make($validated['password'])
-      ]);
+        !isset($validated['company_id']) 
+        ?
+        $company = Company::first()
+        :
+        $company = Company::where('id', $validated['company_id'])->first();
 
-      $token = $this->createToken(
-          $user
-      );
+        
+        $user = User::create([
+            'company_id' => $company->id,
+            'first_name' => $validated['first_name'],
+            'last_name' => $validated['last_name'],
+            'email' => $validated['email'],
+            'role' => $validated['role'],
+            'password' => Hash::make($validated['password'])
+        ]);
 
-      return response()->json([
-        'status' => true,
-        'message' => 'User Created Successfully',
-        'user' => $user,
-        'token' => $token
-      ], 201);
+        return response()->json([
+            'status' => true,
+            'message' => 'User Created Successfully',
+            'user' => $user,
+        ], 201);
 
     } catch (\Throwable $th) {
-      return response()->json([
-        'status' => false,
-        'message' => $th->getMessage()
-      ], 500);
+        return response()->json([
+            'status' => false,
+            'message' => $th->getMessage()
+        ], 500);
     }
   }
 

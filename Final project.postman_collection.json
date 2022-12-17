@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "52cbe7fb-9fe5-4b8e-8181-5e165b2ed3d5",
+		"name": "Final project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21249413"
+	},
+	"item": [
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "create company",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "some random name122121121212133",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companies",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update company",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "some random name123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/companies/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete company",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job openings",
+			"item": [
+				{
+					"name": "create job opening",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/9/jobOpenings?name=new company 1&title=new title 1&description=a rare description&is_published=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"9",
+								"jobOpenings"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "new company 1"
+								},
+								{
+									"key": "title",
+									"value": "new title 1"
+								},
+								{
+									"key": "description",
+									"value": "a rare description"
+								},
+								{
+									"key": "is_published",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show job openings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show single job opening",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job opening",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/5/jobOpenings/10?title=new title23&description=new description3&is_published=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"5",
+								"jobOpenings",
+								"10"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "new title23"
+								},
+								{
+									"key": "description",
+									"value": "new description3"
+								},
+								{
+									"key": "is_published",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete job opening",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "applicants",
+			"item": [
+				{
+					"name": "Create applicant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings/2/applicants?email=mail2@mail.com&first_name=pablito&last_name=pepito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings",
+								"2",
+								"applicants"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "mail2@mail.com"
+								},
+								{
+									"key": "first_name",
+									"value": "pablito"
+								},
+								{
+									"key": "last_name",
+									"value": "pepito"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show applicants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings/1/applicants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings",
+								"1",
+								"applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show a single applicant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings/1/applicants/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings",
+								"1",
+								"applicants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete applicant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/4/jobOpenings/2/applicants/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"4",
+								"jobOpenings",
+								"2",
+								"applicants",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "candidates",
+			"item": [
+				{
+					"name": "create candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/9/jobOpenings/6/candidates?email=applicant6@mail.com&first_name=applicant&last_name=applicant&application_status=human_resources&password=password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"9",
+								"jobOpenings",
+								"6",
+								"candidates"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "applicant6@mail.com"
+								},
+								{
+									"key": "first_name",
+									"value": "applicant"
+								},
+								{
+									"key": "last_name",
+									"value": "applicant"
+								},
+								{
+									"key": "application_status",
+									"value": "human_resources"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "candidates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/9/jobOpenings/6/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"9",
+								"jobOpenings",
+								"6",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show candidate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/9/jobOpenings/6/candidates/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"9",
+								"jobOpenings",
+								"6",
+								"candidates",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update candidate",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/9/jobOpenings/6/candidates/1?first_name=new name&last_name=new name&password=password&application_status=engineering",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"9",
+								"jobOpenings",
+								"6",
+								"candidates",
+								"1"
+							],
+							"query": [
+								{
+									"key": "first_name",
+									"value": "new name"
+								},
+								{
+									"key": "last_name",
+									"value": "new name"
+								},
+								{
+									"key": "email",
+									"value": "apiadmin@mail.com12",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password"
+								},
+								{
+									"key": "application_status",
+									"value": "engineering"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete candidate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/9/jobOpenings/6/candidates/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"9",
+								"jobOpenings",
+								"6",
+								"candidates",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reports",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "26|xw4rs4t89wxZ4OYu12hiHsuWY4yOLKNbFErloMrt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies/5/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"5",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/companies/5/users/90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"5",
+								"users",
+								"90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "show users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register api admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_id",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "apiadmin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "christian",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "sagastegui",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "api_admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "company@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "60|evJFjKpsbOp3NUnbr7jKwGsvo4gYURkaeU6tDNsK",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

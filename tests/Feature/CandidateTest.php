@@ -15,6 +15,8 @@ use \App\Models\Api\{
 
 class CandidateTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function test_it_should_allow_authenticated_user_to_show_all_candidates_from_a_job_opening()
     {
         $user = Sanctum::actingAs(

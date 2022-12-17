@@ -10,6 +10,8 @@ use Laravel\Sanctum\Sanctum;
 
 class UserTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function test_it_should_show_all_users_that_are_related_to_loged_user_company()
     {
         $relatedCompany = Company::factory()->create();

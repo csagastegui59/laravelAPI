@@ -15,6 +15,8 @@ use \App\Models\Api\{
 
 class JobOpeningTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function test_it_should_allow_authenticated_user_to_access_report_endpoint()
     {
         $user = Sanctum::actingAs(

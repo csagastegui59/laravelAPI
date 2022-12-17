@@ -10,6 +10,8 @@ use App\Models\Api\{ User, Company };
 
 class AuthenticationTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function test_it_should_create_api_admin_when_giving_right_key()
     {
         $company = Company::factory()->create();

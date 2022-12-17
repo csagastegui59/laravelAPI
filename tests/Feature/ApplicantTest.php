@@ -10,6 +10,8 @@ use \App\Models\Api\{ User, Company, JobOpening, Applicant };
 
 class ApplicantTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function test_it_should_throw_an_error_to_unauthenticated_users_to_display_applicants_to_a_job_opening()
     {
         $company = Company::factory()->create();

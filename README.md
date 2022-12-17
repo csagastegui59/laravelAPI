@@ -13,6 +13,10 @@ $ composer install
 ~~~
 $ php artisan migrate
 ~~~
+# Run seeders
+~~~
+$ php artisan db:seed
+~~~
 ## Start the server  
 ~~~
 $ php artisan serve

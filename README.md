@@ -1,6 +1,6 @@
 # Clone the project  
 ~~~
-$ git clone git@gitlab.com:christianesr/final-project.git  
+$ git clone git@github.com:csagastegui59/laravelAPI.git
 ~~~
 ### Install dependencies  
 ~~~

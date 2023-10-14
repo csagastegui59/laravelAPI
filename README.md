@@ -29,6 +29,9 @@ php artisan test --env=testing
 ~~~
 $ php artisan model:show Api/Candidate
 ~~~
+### You can find json file postman collection on the source app folder
+![image](https://github.com/csagastegui59/laravelAPI/assets/45051315/041ea7f7-346a-4455-8e35-0f9d6c24538f)
+
 ### Register admin user using secret_key: "123456"
 ![image](https://github.com/csagastegui59/laravelAPI/assets/45051315/fa0ec1d1-8697-457b-9e11-68ad0533eee5)
 ### Login

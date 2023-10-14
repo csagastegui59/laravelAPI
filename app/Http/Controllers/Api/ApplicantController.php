@@ -30,12 +30,12 @@ class ApplicantController extends Controller
                 'applicants' => $applicants->items()
             ], 200);
     
-            } catch (\Throwable $th) {
-                return response()->json([
-                    'status' => false,
-                    'message' => $th->getMessage()
-                ], 500);
-            }
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()
+            ], 500);
+        }
     }
 
     public function store(Company $company, JobOpening $jobOpening, CreateApplicantRequest $request)

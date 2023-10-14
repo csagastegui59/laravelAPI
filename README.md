@@ -29,3 +29,5 @@ php artisan test --env=testing
 ~~~
 $ php artisan model:show Api/Candidate
 ~~~
+### Register admin user using secret_key: "123456"
+![image](https://github.com/csagastegui59/laravelAPI/assets/45051315/fa0ec1d1-8697-457b-9e11-68ad0533eee5)
